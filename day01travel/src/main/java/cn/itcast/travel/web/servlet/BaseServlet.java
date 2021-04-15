@@ -27,13 +27,14 @@ public class BaseServlet extends HttpServlet {
             method.setAccessible(true);
             method.invoke(this,req,resp);
         } catch (NoSuchMethodException e) {
+
+            System.out.println("lalal");
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-
     }
     public  void writeValue(HttpServletResponse response,Object obj) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
